@@ -1,0 +1,8 @@
+# Interfaz y Dashboard
+streamlit>=1.35.0
+
+# Conexión con Base de Datos
+supabase>=2.4.0
+
+# Manipulación y Limpieza de Datos
+pandas>=2.2.0
