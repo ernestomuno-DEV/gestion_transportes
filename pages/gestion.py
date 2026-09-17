@@ -1,7 +1,6 @@
 import streamlit as st
 from src.components.table_info import render_table_info
 
-st.set_page_config(page_title='Gestion Transportes',layout='wide' )
 st.title('Gestion Transportes')
 
 

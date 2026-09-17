@@ -1,4 +1,3 @@
-import pandas as pd
 from supabase import create_client, Client
 import streamlit as st
 from .utils.limpieza import taller_limpieza
@@ -12,7 +11,7 @@ def conexion() -> Client:
     return create_client(url, key)
 
 
-
+@st.cache_data(ttl=60)
 def obtener_datos(tabla: str, taller: str):
     supabase = conexion()
     try:
@@ -43,5 +42,5 @@ def registrar_datos(data: dict):
         response = supabase.table(data_lista.get("tabla")).insert(payload).execute()
         return response.data
     except Exception as e:
-        st.error(f"Error al registrar datos en la tabla {data_lista.get('tabla')}: {e}")
+        st.error(f"Error al registrar datos en la tabla")
         return None
